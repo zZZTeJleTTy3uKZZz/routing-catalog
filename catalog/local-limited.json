@@ -1,0 +1,50 @@
+{
+  "$schema": "../schema.json",
+  "schema": 1,
+  "version": "2026.10.21.1",
+  "kind": "local-limited",
+  "title": "Ресурсы, недоступные с нашей стороны",
+  "entries": [
+    {
+      "id": "telegram",
+      "title": "Telegram",
+      "domains": ["telegram.org", "t.me"],
+      "ip_cidr": [
+        "91.108.56.0/22", "91.108.4.0/22", "91.108.8.0/22", "91.108.16.0/22",
+        "91.108.12.0/22", "91.108.20.0/22", "149.154.160.0/20", "91.105.192.0/23",
+        "185.76.151.0/24", "2001:b28:f23d::/48", "2001:b28:f23f::/48",
+        "2001:67c:4e8::/48", "2001:b28:f23c::/48", "2a0a:f280::/32"
+      ],
+      "apps": {
+        "windows": ["Telegram.exe"],
+        "linux": ["telegram-desktop"],
+        "android": ["org.telegram.messenger"]
+      },
+      "source": "официальный список диапазонов core.telegram.org/resources/cidr.txt; домены - публичный набор sing-geosite (telegram); программы - наблюдение владельца"
+    },
+    {
+      "id": "communication",
+      "title": "Связь и мессенджеры",
+      "domains": ["whatsapp.com", "signal.org", "discord.com"],
+      "ip_cidr": [],
+      "apps": { "windows": ["Discord.exe"], "linux": [], "android": [] },
+      "source": "публичный набор sing-geosite (category-communication), названа часть состава; Discord.exe - не проверено замером"
+    },
+    {
+      "id": "media",
+      "title": "Новостные ресурсы",
+      "domains": ["meduza.io"],
+      "ip_cidr": [],
+      "apps": { "windows": [], "linux": [], "android": [] },
+      "source": "публичный набор sing-geosite (category-media), назван один домен; полный состав - во внешнем наборе"
+    },
+    {
+      "id": "video",
+      "title": "Видеохостинг",
+      "domains": ["youtube.com", "youtu.be", "googlevideo.com", "ytimg.com", "ggpht.com"],
+      "ip_cidr": [],
+      "apps": { "windows": [], "linux": [], "android": ["com.google.android.youtube"] },
+      "source": "наблюдение владельца и общедоступные списки маршрутизации; Android-пакет не проверен замером"
+    }
+  ]
+}

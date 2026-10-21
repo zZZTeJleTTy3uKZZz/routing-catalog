@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Каталог назначений",
+  "type": "object",
+  "required": ["schema", "version", "kind", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema": { "const": 1 },
+    "version": { "type": "string", "pattern": "^\\d{4}\\.\\d{2}\\.\\d{2}\\.\\d+$" },
+    "kind": { "enum": ["local-limited", "remote-limited"] },
+    "title": { "type": "string" },
+    "entries": { "type": "array", "items": { "$ref": "#/$defs/entry" } }
+  },
+  "$defs": {
+    "names": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "entry": {
+      "type": "object",
+      "required": ["id", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "title": { "type": "string" },
+        "domains": { "$ref": "#/$defs/names" },
+        "ip_cidr": { "$ref": "#/$defs/names" },
+        "apps": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "windows": { "$ref": "#/$defs/names" },
+            "linux": { "$ref": "#/$defs/names" },
+            "android": { "$ref": "#/$defs/names" },
+            "macos": { "$ref": "#/$defs/names" }
+          }
+        },
+        "source": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

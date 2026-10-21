@@ -1,0 +1,25 @@
+{
+  "$schema": "../schema.json",
+  "schema": 1,
+  "version": "2026.10.21.1",
+  "kind": "remote-limited",
+  "title": "Ресурсы, не принимающие наши адреса",
+  "entries": [
+    {
+      "id": "ai-openai",
+      "title": "OpenAI / ChatGPT",
+      "domains": ["openai.com", "chatgpt.com", "oaistatic.com", "oaiusercontent.com", "openai.fm"],
+      "ip_cidr": [],
+      "apps": { "windows": ["ChatGPT.exe"], "linux": [], "android": [] },
+      "source": "наблюдение владельца; ChatGPT.exe - замер на рабочей машине 17.10.2026"
+    },
+    {
+      "id": "ai-assistants",
+      "title": "Ассистенты на базе ИИ",
+      "domains": ["claude.ai", "anthropic.com", "perplexity.ai"],
+      "ip_cidr": [],
+      "apps": { "windows": ["claude.exe"], "linux": [], "android": [] },
+      "source": "публичный набор sing-geosite (category-ai-!cn), названа часть состава; claude.exe - наблюдение владельца"
+    }
+  ]
+}
